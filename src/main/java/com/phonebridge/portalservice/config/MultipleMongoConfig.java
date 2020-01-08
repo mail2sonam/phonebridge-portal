@@ -15,10 +15,10 @@ import lombok.RequiredArgsConstructor;
 
 @Configuration
 @RequiredArgsConstructor
-@EnableConfigurationProperties(MultipleMongoProperties.class)
+@EnableConfigurationProperties(MyMongoProperties.class)
 public class MultipleMongoConfig {
 
-    private final MultipleMongoProperties mongoProperties;
+    private final MyMongoProperties mongoProperties;
 
     @Primary
     @Bean(name = "primaryMongoTemplate")
@@ -30,7 +30,7 @@ public class MultipleMongoConfig {
 
     @Bean(name = "secondaryMongoTemplate")
     public MongoTemplate secondaryMongoTemplate() throws Exception {
-    	MongoTemplate template=new MongoTemplate(secondaryFactory(this.mongoProperties.getSecondary()));
+    	MongoTemplate template=new MongoTemplate(primaryFactory(this.mongoProperties.getPrimary()));
     	template.setReadPreference(com.mongodb.ReadPreference.secondaryPreferred());
         return template;
     }
@@ -38,12 +38,6 @@ public class MultipleMongoConfig {
     @Bean
     @Primary
     public MongoDbFactory primaryFactory(final MongoProperties mongo) throws Exception {
-        return new SimpleMongoDbFactory(new MongoClient(mongo.getHost(), mongo.getPort()),
-                mongo.getDatabase());
-    }
-
-    @Bean
-    public MongoDbFactory secondaryFactory(final MongoProperties mongo) throws Exception {
         return new SimpleMongoDbFactory(new MongoClient(mongo.getHost(), mongo.getPort()),
                 mongo.getDatabase());
     }

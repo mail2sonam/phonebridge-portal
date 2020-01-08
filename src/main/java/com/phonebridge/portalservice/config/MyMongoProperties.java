@@ -7,8 +7,7 @@ import lombok.Data;
 
 @Data
 @ConfigurationProperties(prefix = "mongodb")
-public class MultipleMongoProperties {
+public class MyMongoProperties {
 
     private MongoProperties primary = new MongoProperties();
-    private MongoProperties secondary = new MongoProperties();
 }

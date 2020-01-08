@@ -10,7 +10,3 @@ mongodb:
     host: mongo1
     port: 30001
     database: phonebridgedb
-  secondary:
-    host: mongo1
-    port: 30001
-    database: phonebridgedb

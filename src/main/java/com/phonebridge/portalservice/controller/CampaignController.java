@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.phonebridge.portalservice.repo.CampaignRepository;
+import com.phonebridge.portalservice.repo.primary.CampaignRepository;
 import com.phonebridge.portalservice.row.CallDirection;
 import com.phonebridge.portalservice.row.Campaign;
 import com.phonebridge.portalservice.row.ServerDetails;

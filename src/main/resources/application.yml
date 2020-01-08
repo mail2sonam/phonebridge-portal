@@ -1,0 +1,16 @@
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+#  data:
+#    mongodb:
+#      uri: mongodb://localhost:30001/phonebridgedb
+      
+mongodb:
+  primary:
+    host: mongo1
+    port: 30001
+    database: phonebridgedb
+  secondary:
+    host: mongo1
+    port: 30001
+    database: phonebridgedb

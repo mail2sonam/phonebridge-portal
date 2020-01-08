@@ -1,4 +1,4 @@
-package com.phonebridge.portalservice.repo;
+package com.phonebridge.portalservice.repo.primary;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

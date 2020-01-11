@@ -35,6 +35,7 @@ public class CampaignController {
 		c1.setBranchWise("branchwise");
 		c1.setCalldirection(CallDirection.Both);
 		
+		com.phonebridge.row.campaign.Campaign c=new com.phonebridge.row.campaign.Campaign();
 	
 		//service.saveData(c1);
 		//repository.findAll().forEach(u -> System.out.println(u));

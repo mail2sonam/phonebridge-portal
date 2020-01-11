@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.phonebridge</groupId>
-	<artifactId>PortallService</artifactId>
+	<artifactId>portal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>CallService</name>
+	<name>phonebridge-portal</name>
 	<description>Phonebridge Portal Service</description>
 
 	<properties>
@@ -19,6 +19,11 @@
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.phonebridge</groupId>
+		  	<artifactId>common</artifactId>
+		  	<version>0.0.1-SNAPSHOT</version>
+  		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>

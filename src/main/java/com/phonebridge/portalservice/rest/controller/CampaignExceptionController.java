@@ -1,4 +1,4 @@
-package com.phonebridge.portalservice.controller;
+package com.phonebridge.portalservice.rest.controller;
 
 import java.util.ArrayList;
 import java.util.List;

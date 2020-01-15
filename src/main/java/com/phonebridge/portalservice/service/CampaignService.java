@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 import com.phonebridge.portalservice.repo.primary.CampaignRepository;
-import com.phonebridge.portalservice.row.Campaign;
+import com.phonebridge.row.campaign.Campaign;
 
 @Service
 public class CampaignService {

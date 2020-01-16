@@ -10,8 +10,6 @@ import lombok.Data;
 @Data
 public class ShowField{
     private String fieldLabel;
-    private String fieldValue;
-    private String displayValue;
-    private String showFieldID;
+    private String displayField;
     private boolean isUrl;
 }

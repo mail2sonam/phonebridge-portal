@@ -17,6 +17,7 @@ import com.phonebridge.row.campaign.CampaignPopupIncoming;
 import com.phonebridge.row.campaign.Disposition;
 import com.phonebridge.row.campaign.EnumAssocDirection;
 import com.phonebridge.row.campaign.EnumCampaignSource;
+import com.phonebridge.row.campaign.EnumDispositionDataType;
 import com.phonebridge.row.campaign.EnumStatus;
 import com.phonebridge.row.campaign.EnumTypeOfCall;
 import com.phonebridge.row.campaign.ShowField;
@@ -48,15 +49,15 @@ public class CampaignUtil {
 		
 		if(campaign.isEnabledForPopup()) {
 			CampaignPopup campaignPopup = new CampaignPopup();
-			campaignPopup.setModuleLinked(ncr.getCampaignPopup().isModuleLinked());
-			if(campaignPopup.isModuleLinked()) {
+			campaignPopup.setCampaignFeedSource(EnumCampaignSource.valueOf(ncr.getCampaignPopup().getCampaignFeedSource()));
+			if(EnumCampaignSource.ModuleLinked == campaignPopup.getCampaignFeedSource()) {
 				campaignPopup.setModuleName(ncr.getCampaignPopup().getModuleName());
 			}
 			if(ncr.getCampaignPopup().getDirectoryInfoURL()!=null && ncr.getCampaignPopup().getDirectoryInfoURL().length()>0) {
 				campaignPopup.setDirectoryInfoURL(ncr.getCampaignPopup().getDirectoryInfoURL());
 			}
 			campaignPopup.setWrapUpTimeInSecs(ncr.getCampaignPopup().getWrapUpTimeInSecs());
-			campaignPopup.setCampaignFeedSource(EnumCampaignSource.valueOf(ncr.getCampaignPopup().getCampaignFeedSource()));
+			
 			
 			campaignPopup.setDispositions(copyDispositions(ncr.getCampaignPopup().getDispositions()));
 			campaignPopup.setShowFields(copyShowFields(ncr.getCampaignPopup().getShowFields()));
@@ -73,8 +74,8 @@ public class CampaignUtil {
 		
 		if(EnumAssocDirection.INCOMING == campaign.getCallDirection()) {
 			CampaignIncomingSettings campaignIncomingSettings=new CampaignIncomingSettings();
-			campaignIncomingSettings.setDidNumber(ncr.getCampaignIncomingSettings().getDidNumber());
-			campaignIncomingSettings.setQueueName(ncr.getCampaignIncomingSettings().getQueueName());
+			campaignIncomingSettings.setDidNumbers(ncr.getCampaignIncomingSettings().getDidNumbers());
+			campaignIncomingSettings.setQueueNames(ncr.getCampaignIncomingSettings().getQueueNames());
 			campaignIncomingSettings.setCtiPostBackUrl(ncr.getCampaignIncomingSettings().getCtiPostBackUrl());
 			campaign.setCampaignIncomingSettings(campaignIncomingSettings);
 		}
@@ -102,9 +103,9 @@ public class CampaignUtil {
 			ShowField sf = new ShowField();
 			sf.setShowFieldID(UUID.randomUUID().toString());
 			sf.setFieldLabel(reqSf.getFieldLabel());
-			sf.setFieldValue(reqSf.getFieldValue());
-			sf.setDisplayValue(reqSf.getDisplayValue());
+			sf.setDisplayField(reqSf.getDisplayField());
 			sf.setUrl(reqSf.isUrl());
+			resultShowFields.add(sf);
 		});
 		return resultShowFields;
 	}
@@ -114,20 +115,22 @@ public class CampaignUtil {
 		if(reqDispositions==null || reqDispositions.isEmpty()) {
 			return Collections.emptyList();
 		}
-		List<Disposition> resultShowFields = new ArrayList<>(reqDispositions.size());
+		List<Disposition> resultDispositions = new ArrayList<>(reqDispositions.size());
 		reqDispositions.forEach(reqDis -> {
 			Disposition disp = new Disposition();
-			disp.setDispositionID(UUID.randomUUID().toString()); 
-			disp.setFieldValue(reqDis.getFieldValue());
+			disp.setDispositionID(UUID.randomUUID().toString());
+			disp.setFieldDataType(EnumDispositionDataType.valueOf(reqDis.getFieldDataType()));
 			disp.setFieldLabel(reqDis.getFieldLabel());
 			disp.setCallWorkFlow(reqDis.getCallWorkFlow());
 			disp.setSendSMS(reqDis.isSendSMS());
 			disp.setSmsText(reqDis.getSmsText());
 			disp.setConversion(reqDis.isConversion());
+			disp.setDropDownValues(reqDis.getDropDownValues());
 			//Reccursion
 			disp.setDependantDisp(copyDispositions(reqDis.getDependantLst()));
+			resultDispositions.add(disp);
 		});
-		return resultShowFields;
+		return resultDispositions;
 	}
 
 

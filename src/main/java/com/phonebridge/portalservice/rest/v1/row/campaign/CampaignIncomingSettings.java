@@ -10,10 +10,10 @@ public class CampaignIncomingSettings {
 	 * Incoming Specific
 	 *******************************************************************************************/
 	/* Incoming: For making DID based campaigns */
-	private List<String> didNumber;
+	private List<String> didNumbers;
 	
 	/* Incoming: For making Queue based campaigns */
-	private List<String> queueName;
+	private List<String> queueNames;
 	
 	/* Configured to send CDRs when received */
 	private String ctiPostBackUrl;

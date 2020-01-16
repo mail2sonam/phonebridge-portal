@@ -7,8 +7,6 @@ import lombok.Data;
 @Data
 public class CampaignPopup {
 	
-	private boolean isModuleLinked;
-	
 	private String moduleName;
 	
 	/* Directory URL to get info about an IC number / OG No */ 

@@ -10,13 +10,14 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class Disposition{
-    private String dispositionID; 
-    private String fieldValue;
+public class Disposition{ 
+    private String fieldDataType;
+    private List<String> dropDownValues;
     private String fieldLabel;
     private String callWorkFlow;
     private List<Disposition> dependantLst;
     private boolean sendSMS;
     private String smsText;
     private boolean conversion;
+    
 }

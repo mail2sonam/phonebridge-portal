@@ -11,5 +11,5 @@ import lombok.Data;
 public class ShowField{
     private String fieldLabel;
     private String displayField;
-    private boolean isUrl;
+    private Boolean isUrl;
 }

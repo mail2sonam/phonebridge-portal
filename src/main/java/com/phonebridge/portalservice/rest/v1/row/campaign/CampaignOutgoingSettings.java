@@ -11,7 +11,7 @@ public class CampaignOutgoingSettings {
 	 * Outgoing Specific
 	 *******************************************************************************************/
 	/* This is to provision map a list of numbers to particular extensions */
-	private boolean isExtensionWise;
+	private Boolean isExtensionWise;
 	
 	/* In case the customer doesn't pick up, how many times should we retry */
 	private int noOfClientTries;

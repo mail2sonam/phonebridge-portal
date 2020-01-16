@@ -16,8 +16,8 @@ public class Disposition{
     private String fieldLabel;
     private String callWorkFlow;
     private List<Disposition> dependantLst;
-    private boolean sendSMS;
+    private Boolean sendSMS;
     private String smsText;
-    private boolean conversion;
+    private Boolean conversion;
     
 }

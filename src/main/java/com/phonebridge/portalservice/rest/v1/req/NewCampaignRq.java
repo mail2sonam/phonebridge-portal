@@ -12,11 +12,11 @@ public class NewCampaignRq extends BaseReq{
 	private String campaignName;
 	private String callDirection;
 	private String campaignStatus;
-	private boolean isEnabledForPopup;
+	private Boolean isEnabledForPopup;
 	/* Defines the type of Campaign */
 	private String typeOfCall;
 	/* Default campaigns are generic those which don't fit into other campaigns */
-	private boolean isDefault;
+	private Boolean isDefault;
 	
 	private CampaignIncomingSettings campaignIncomingSettings;
 	private CampaignOutgoingSettings campaignOutgoingSettings;

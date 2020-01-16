@@ -43,9 +43,9 @@ public class CampaignUtil {
 		campaign.setCampaignName(ncr.getCampaignName());
 		campaign.setCallDirection(EnumAssocDirection.valueOf(ncr.getCallDirection()));
 		campaign.setCampaignStatus(EnumStatus.valueOf(ncr.getCampaignStatus()));
-		campaign.setEnabledForPopup(ncr.isEnabledForPopup());
+		campaign.setEnabledForPopup(ncr.getIsEnabledForPopup());
 		campaign.setTypeOfCall(EnumTypeOfCall.valueOf(ncr.getTypeOfCall()));
-		campaign.setDefault(ncr.isDefault());
+		campaign.setDefault(ncr.getIsDefault());
 		
 		if(campaign.isEnabledForPopup()) {
 			CampaignPopup campaignPopup = new CampaignPopup();
@@ -81,7 +81,7 @@ public class CampaignUtil {
 		}
 		if(EnumAssocDirection.OUTGOING == campaign.getCallDirection()) {
 			CampaignOutgoingSettings campaignOutgoingSettings=new CampaignOutgoingSettings();
-			campaignOutgoingSettings.setExtensionWise(ncr.getCampaignOutgoingSettings().isExtensionWise());
+			campaignOutgoingSettings.setExtensionWise(ncr.getCampaignOutgoingSettings().getIsExtensionWise());
 			campaignOutgoingSettings.setNoOfClientTries(ncr.getCampaignOutgoingSettings().getNoOfClientTries());
 			campaignOutgoingSettings.setNoOfAgentTries(ncr.getCampaignOutgoingSettings().getNoOfAgentTries());
 			campaignOutgoingSettings.setRetryAfter(ncr.getCampaignOutgoingSettings().getRetryAfter());
@@ -104,7 +104,7 @@ public class CampaignUtil {
 			sf.setShowFieldID(UUID.randomUUID().toString());
 			sf.setFieldLabel(reqSf.getFieldLabel());
 			sf.setDisplayField(reqSf.getDisplayField());
-			sf.setUrl(reqSf.isUrl());
+			sf.setUrl(reqSf.getIsUrl());
 			resultShowFields.add(sf);
 		});
 		return resultShowFields;
@@ -122,9 +122,9 @@ public class CampaignUtil {
 			disp.setFieldDataType(EnumDispositionDataType.valueOf(reqDis.getFieldDataType()));
 			disp.setFieldLabel(reqDis.getFieldLabel());
 			disp.setCallWorkFlow(reqDis.getCallWorkFlow());
-			disp.setSendSMS(reqDis.isSendSMS());
+			disp.setSendSMS(reqDis.getSendSMS());
 			disp.setSmsText(reqDis.getSmsText());
-			disp.setConversion(reqDis.isConversion());
+			disp.setConversion(reqDis.getConversion());
 			disp.setDropDownValues(reqDis.getDropDownValues());
 			//Reccursion
 			disp.setDependantDisp(copyDispositions(reqDis.getDependantLst()));

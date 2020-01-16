@@ -48,9 +48,9 @@ public class TestCampaign {
         req.setCampaignName("AirtelSupport");
         req.setCallDirection("INCOMING");
         req.setCampaignStatus("Active");
-        req.setEnabledForPopup(true);
+        req.setIsEnabledForPopup(true);
         req.setTypeOfCall("QUEUE_INCOMING");
-        req.setDefault(false);
+        req.setIsDefault(false);
     	
         CampaignIncomingSettings campaignIncomingSettings=new CampaignIncomingSettings();
         campaignIncomingSettings.setDidNumbers(Collections.singletonList("277003"));
@@ -74,7 +74,7 @@ public class TestCampaign {
         ShowField sf = new ShowField();
         sf.setFieldLabel("Customer Since");
         sf.setDisplayField("customerSince");
-        sf.setUrl(false);
+        sf.setIsUrl(false);
         campaignPopup.setShowFields(Collections.singletonList(sf));
         	
         req.setCampaignPopup(campaignPopup);

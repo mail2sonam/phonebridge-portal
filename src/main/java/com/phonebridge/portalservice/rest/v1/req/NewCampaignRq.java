@@ -7,7 +7,7 @@ import com.phonebridge.portalservice.rest.v1.row.campaign.CampaignPopup;
 import lombok.Data;
 
 @Data
-public class NewCampaignRq{
+public class NewCampaignRq extends BaseReq{
 
 	private String campaignName;
 	private String callDirection;

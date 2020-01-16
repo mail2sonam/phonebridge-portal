@@ -32,7 +32,7 @@ public class CampaignUtil {
 		return newCampaignRs;
 	}
 
-	public static Campaign convertIntoCampaign(String accountId, NewCampaignRq ncr) {
+	public static Campaign convertIntoCampaign(String accountId, String userId, NewCampaignRq ncr) {
 		Campaign campaign=new Campaign();
 		
 		Account account = new Account();
@@ -88,6 +88,7 @@ public class CampaignUtil {
 			campaignOutgoingSettings.setPrefix(ncr.getCampaignOutgoingSettings().getPrefix());
 			campaignOutgoingSettings.setDialOutWaitTimeInSecs(ncr.getCampaignOutgoingSettings().getDialOutWaitTimeInSecs());
 		}
+		campaign.setCreatedBy(userId);
 		return campaign;
 	}
 

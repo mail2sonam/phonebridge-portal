@@ -24,12 +24,12 @@ import com.phonebridge.row.campaign.ShowField;
 
 public class CampaignUtil {
 	
-	public static NewCampaignRs convertIntoNewCampaignRs(Campaign campaign) {
-		if(campaign==null) {
+	public static NewCampaignRs convertIntoNewCampaignRs(String campaignId) {
+		if(campaignId==null) {
 			return null;
 		}
 		NewCampaignRs newCampaignRs = new NewCampaignRs();
-		newCampaignRs.setCampaignId(campaign.getCampaignId());
+		newCampaignRs.setCampaignId(campaignId);
 		return newCampaignRs;
 	}
 

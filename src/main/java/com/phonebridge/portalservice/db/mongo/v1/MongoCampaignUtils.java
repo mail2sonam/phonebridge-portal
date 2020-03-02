@@ -12,9 +12,9 @@ import com.phonebridge.portalservice.db.mongo.v1.row.campaign.MongoCampaignOutgo
 import com.phonebridge.portalservice.db.mongo.v1.row.campaign.MongoCampaignPopup;
 import com.phonebridge.portalservice.db.mongo.v1.row.campaign.MongoCampaignRow;
 import com.phonebridge.portalservice.db.mongo.v1.row.campaign.ShowField;
-import com.phonebridge.row.campaign.Campaign;
-import com.phonebridge.row.campaign.EnumAssocDirection;
-import com.phonebridge.row.campaign.EnumTypeOfCall;
+import com.phonebridge.portalservice.row.campaign.Campaign;
+import com.phonebridge.portalservice.row.campaign.EnumAssocDirection;
+import com.phonebridge.portalservice.row.campaign.EnumTypeOfCall;
 
 @Component
 public class MongoCampaignUtils {

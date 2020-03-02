@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.phonebridge.portalservice.rest.v1.req.NewCampaignRq;
 import com.phonebridge.portalservice.rest.v1.resp.NewCampaignRs;
 import com.phonebridge.portalservice.rest.v1.util.CampaignUtil;
+import com.phonebridge.portalservice.row.campaign.Campaign;
 import com.phonebridge.portalservice.service.ICampaignService;
-import com.phonebridge.row.campaign.Campaign;
 
 @RestController
 @RequestMapping(path = "/campaign/v1")

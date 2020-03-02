@@ -8,19 +8,19 @@ import java.util.UUID;
 
 import com.phonebridge.portalservice.rest.v1.req.NewCampaignRq;
 import com.phonebridge.portalservice.rest.v1.resp.NewCampaignRs;
-import com.phonebridge.row.account.Account;
-import com.phonebridge.row.campaign.Campaign;
-import com.phonebridge.row.campaign.CampaignIncomingSettings;
-import com.phonebridge.row.campaign.CampaignOutgoingSettings;
-import com.phonebridge.row.campaign.CampaignPopup;
-import com.phonebridge.row.campaign.CampaignPopupIncoming;
-import com.phonebridge.row.campaign.Disposition;
-import com.phonebridge.row.campaign.EnumAssocDirection;
-import com.phonebridge.row.campaign.EnumCampaignSource;
-import com.phonebridge.row.campaign.EnumDispositionDataType;
-import com.phonebridge.row.campaign.EnumStatus;
-import com.phonebridge.row.campaign.EnumTypeOfCall;
-import com.phonebridge.row.campaign.ShowField;
+import com.phonebridge.portalservice.row.account.Account;
+import com.phonebridge.portalservice.row.campaign.Campaign;
+import com.phonebridge.portalservice.row.campaign.CampaignIncomingSettings;
+import com.phonebridge.portalservice.row.campaign.CampaignOutgoingSettings;
+import com.phonebridge.portalservice.row.campaign.CampaignPopup;
+import com.phonebridge.portalservice.row.campaign.CampaignPopupIncoming;
+import com.phonebridge.portalservice.row.campaign.Disposition;
+import com.phonebridge.portalservice.row.campaign.EnumAssocDirection;
+import com.phonebridge.portalservice.row.campaign.EnumCampaignSource;
+import com.phonebridge.portalservice.row.campaign.EnumDispositionDataType;
+import com.phonebridge.portalservice.row.campaign.EnumStatus;
+import com.phonebridge.portalservice.row.campaign.EnumTypeOfCall;
+import com.phonebridge.portalservice.row.campaign.ShowField;
 
 public class CampaignUtil {
 	

@@ -1,6 +1,6 @@
 package com.phonebridge.portalservice.service;
 
-import com.phonebridge.row.campaign.Campaign;
+import com.phonebridge.portalservice.row.campaign.Campaign;
 
 public interface ICampaignService {
 	String saveData(Campaign campaign);
